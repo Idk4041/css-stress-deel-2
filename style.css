@@ -168,6 +168,14 @@ body {
   background-color: #d9edb5;
   padding: 30px 0px;
 }
+#contact p {
+    color: white;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    max-width: 400px;
+    font-size: 16px;
+}
+
 
 .contactBox {
   background-color: #3f593c;
@@ -193,7 +201,9 @@ body {
   resize: none;
   border-radius: 10px;
   padding: 10px;
-  background-color: #f7feea;
+  background-color: #f7feea; 
+  margin-left: 440px;
+  width: 315px;
 }
 
 #contactInformatie {
@@ -211,14 +221,17 @@ body {
 #email {
   background-color: #f7feea;
   border-radius: 8px;
-  padding: 7px;
-  width: 315px;
+  display: flex;
+ padding: 7px;
+  width: 322px;
+  margin-left: 340px;
 }
 
 #contactButton {
   background-color: #d9edb5;
   border-radius: 15px;
-  margin: 10px 0 0 30px;
+  justify-self: center;
+  margin: 10px 0 0 375px;
   padding: 7px;
   width: 280px;
 }
