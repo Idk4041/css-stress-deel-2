@@ -6,6 +6,24 @@ const plantenAssortiment = [
         afbeelding: "images/Nora'sFloraLogo.png",
         beschrijving: "Populaire gatenplant."
     },
+    {
+        naam: "iomiomi",
+        prijs: 19.95,
+        afbeelding: "images/Nora'sFloraLogo.png",
+        beschrijving: "Populaire gatenplant."
+    },
+    {
+        naam: "iomiomi",
+        prijs: 19.95,
+        afbeelding: "images/Nora'sFloraLogo.png",
+        beschrijving: "Populaire gatenplant."
+    },
+    {
+        naam: "iomiomi",
+        prijs: 19.95,
+        afbeelding: "images/Nora'sFloraLogo.png",
+        beschrijving: "Populaire gatenplant."
+    },
 
 ];
 

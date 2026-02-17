@@ -134,12 +134,19 @@ body {
   gap: 20px;
 }
 
+#planten-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 20px;
+}
+
 .plant-card {
   background-color: #d9edb5;
   border-radius: 8px;
   text-align: center;
   overflow: hidden;
   color: #000000;
+  width: 100%;
 }
 
 .plant-card img {
