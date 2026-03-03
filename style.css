@@ -154,6 +154,8 @@ body {
   height: 187px;
   object-fit: cover;
   display: block;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .plant-card p {
@@ -169,6 +171,19 @@ body {
   height: 420px;
 }
 
+.winkelbutton {
+  background-color: #69ab4b;
+  color: #ffffff;
+  /* 3F593C
+283F25
+D9EDB5
+F6F8E7  */
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
 /*Contact*/
 
 #contact {

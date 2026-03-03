@@ -69,7 +69,7 @@ function toonPlanten() {
                 <h3>${plant.naam}</h3>
                 <p>${plant.beschrijving}</p>
                 <p><strong>€${plant.prijs.toFixed(2)}</strong></p>
-                <button>Voeg toe aan winkelwagen</button>
+                <button class="winkelbutton">Voeg toe aan winkelwagen</button>
             </div>
         `;
     });
