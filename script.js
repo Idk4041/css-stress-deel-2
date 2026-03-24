@@ -57,19 +57,34 @@ const plantenAssortiment = [
 
 ];
 
+
+let winkelwagen = [];
+
+function saveCart() {
+    localStorage.setItem('winkelwagen', JSON.stringify(winkelwagen));
+}
+
+function loadCart() {
+    const saved = localStorage.getItem('winkelwagen');
+    if (saved) {
+        winkelwagen = JSON.parse(saved);
+    }
+}
+
 function toonPlanten() {
     const container = document.getElementById('producten');
     let htmlContent = '';
 
-
-    plantenAssortiment.forEach(plant => {
+    plantenAssortiment.forEach((plant, index) => {
         htmlContent += `
             <div class="plant-card">
                 <img src="${plant.afbeelding}" alt="${plant.naam}">
                 <h3>${plant.naam}</h3>
                 <p>${plant.beschrijving}</p>
                 <p><strong>€${plant.prijs.toFixed(2)}</strong></p>
-                <button class="winkelbutton">Voeg toe aan winkelwagen</button>
+                <button class="winkelbutton" onclick="voegToeAanWagen(${index})">
+                    Voeg toe aan winkelwagen
+                </button>
             </div>
         `;
     });
@@ -77,5 +92,70 @@ function toonPlanten() {
     container.innerHTML = htmlContent;
 }
 
+function voegToeAanWagen(index) {
+    const plant = plantenAssortiment[index];
+    const bestaandItem = winkelwagen.find(item => item.naam === plant.naam);
 
-document.addEventListener('DOMContentLoaded', toonPlanten);
+    if (bestaandItem) {
+        bestaandItem.aantal++;          // Already in cart → increase quantity
+    } else {
+        winkelwagen.push({ ...plant, aantal: 1 });  // New item → add it
+    }
+
+    updateWinkelwagen();
+}
+
+function verwijderUitWagen(naam) {
+    winkelwagen = winkelwagen.filter(item => item.naam !== naam);
+    updateWinkelwagen();
+}
+
+function updateWinkelwagen() {
+    const wagenContainer = document.getElementById('winkelwagen');
+    const aantalBadge = document.getElementById('wagen-aantal');
+
+    const totaalAantal = winkelwagen.reduce((som, item) => som + item.aantal, 0);
+    aantalBadge.textContent = totaalAantal;
+
+    if (winkelwagen.length === 0) {
+        wagenContainer.innerHTML = '<p>Je winkelwagen is leeg.</p>';
+        return;
+    }
+
+    const totaalPrijs = winkelwagen.reduce((som, item) => som + item.prijs * item.aantal, 0);
+
+    wagenContainer.innerHTML = `
+        <ul>
+            ${winkelwagen.map(item => `
+                <li>
+                    ${item.naam} × ${item.aantal} — €${(item.prijs * item.aantal).toFixed(2)}
+                    <button onclick="verwijderUitWagen('${item.naam}')">✕</button>
+                </li>
+            `).join('')}
+        </ul>
+        <p><strong>Totaal: €${totaalPrijs.toFixed(2)}</strong></p>
+        <button onclick="afrekenen()">Afrekenen</button>
+    `;
+
+    saveCart();
+}
+
+function afrekenen() {
+    alert(`Bedankt voor je bestelling! Totaal: €${winkelwagen.reduce((som, item) => som + item.prijs * item.aantal, 0).toFixed(2)
+        }`);
+    winkelwagen = [];
+    updateWinkelwagen();
+    saveCart();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    toonPlanten();
+    loadCart();
+    updateWinkelwagen();
+
+
+    document.getElementById('wagen-icoon').addEventListener('click', function () {
+        const cart = document.getElementById('winkelwagen');
+        cart.style.display = cart.style.display === 'none' ? 'block' : 'none';
+    });
+});
