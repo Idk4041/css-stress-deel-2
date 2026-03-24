@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  /* padding: 0; */
   color: #ffffff;
   font-family: sans-serif;
   background-color: #f6f7e3;
@@ -171,20 +170,6 @@ body {
   height: 420px;
 }
 
-.winkelbutton {
-  background-color: #69ab4b;
-  color: #ffffff;
-  /* 3F593C
-283F25
-D9EDB5
-F6F8E7  */
-  border: none;
-  padding: 10px 20px;
-  margin: 10px 0;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
 /*Contact*/
 
 #contact {
@@ -199,7 +184,6 @@ F6F8E7  */
   max-width: 400px;
   font-size: 16px;
 }
-
 
 .contactBox {
   background-color: #3f593c;
@@ -248,14 +232,14 @@ F6F8E7  */
   display: flex;
   padding: 7px;
   width: 322px;
-  margin-left: 340px;
+  margin-left: 1050px;
 }
 
 #contactButton {
   background-color: #d9edb5;
   border-radius: 15px;
   justify-self: center;
-  margin: 10px 0 0 375px;
+  margin: 10px 0 0 1075px;
   padding: 7px;
   width: 280px;
 }
@@ -300,6 +284,16 @@ F6F8E7  */
   position: relative;
 }
 
+.winkelbutton {
+  background-color: #69ab4b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 /* 
 FFFFFF
 3F593C
@@ -307,3 +301,100 @@ FFFFFF
 D9EDB5
 F6F8E7 
 */
+@media (max-width: 768px) {
+
+  /* navbar and logo */
+  #divLogo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #divNavigatie {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* background img */
+  #pImgFlowers {
+    height: 200px;
+    line-height: 200px;
+  }
+
+  /* introduction */
+
+  #introductionContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #introductionContainer h1,
+  #introductionContainer p {
+    margin-left: 0;
+  }
+
+  #introductionImg {
+    margin: 20px auto;
+    width: 50%;
+    height: auto;
+  }
+
+  /* homepage assortiment */
+  #aanbiedingen-container {
+    margin: 20px;
+  }
+
+  /* contact */
+  #contactFormulier {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  #vragenEnOpmerkingen {
+    margin-left: 0;
+    width: 90%;
+  }
+
+  #email {
+
+    margin-left: 30px;
+    width: 83%;
+  }
+
+  #contactButton {
+    margin-left: 30px;
+    width: 86%;
+  }
+
+  #contactGegevens {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 10PX;
+  }
+
+  /* winkelwagen */
+  #winkelwagen {
+    position: relative;
+    background-color: #3f593c;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+  }
+
+  #wagen-icoon {
+    cursor: pointer;
+    position: relative;
+    max-width: 80px;
+    margin-left: 240px;
+  }
+
+  /* assortiment */
+  #producten {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

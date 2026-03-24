@@ -78,7 +78,7 @@ function toonPlanten() {
     plantenAssortiment.forEach((plant, index) => {
         htmlContent += `
             <div class="plant-card">
-                <img src="${plant.afbeelding}" alt="${plant.naam}">
+                <img src="${plant.afbeelding}" alt="${plant.naam}" loading="lazy">
                 <h3>${plant.naam}</h3>
                 <p>${plant.beschrijving}</p>
                 <p><strong>€${plant.prijs.toFixed(2)}</strong></p>
@@ -97,9 +97,9 @@ function voegToeAanWagen(index) {
     const bestaandItem = winkelwagen.find(item => item.naam === plant.naam);
 
     if (bestaandItem) {
-        bestaandItem.aantal++;          // Already in cart → increase quantity
+        bestaandItem.aantal++;
     } else {
-        winkelwagen.push({ ...plant, aantal: 1 });  // New item → add it
+        winkelwagen.push({ ...plant, aantal: 1 });
     }
 
     updateWinkelwagen();
