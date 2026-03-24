@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  /* padding: 0; */
   color: #ffffff;
   font-family: sans-serif;
   background-color: #f6f7e3;
@@ -171,19 +170,7 @@ body {
   height: 420px;
 }
 
-.winkelbutton {
-  background-color: #69ab4b;
-  color: #ffffff;
-  /* 3F593C
-283F25
-D9EDB5
-F6F8E7  */
-  border: none;
-  padding: 10px 20px;
-  margin: 10px 0;
-  cursor: pointer;
-  border-radius: 5px;
-}
+
 
 /*Contact*/
 
@@ -298,6 +285,15 @@ F6F8E7  */
 #wagen-icoon {
   cursor: pointer;
   position: relative;
+}
+.winkelbutton {
+  background-color: #69ab4b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 /* 
