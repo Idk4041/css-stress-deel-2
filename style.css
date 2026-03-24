@@ -170,8 +170,6 @@ body {
   height: 420px;
 }
 
-
-
 /*Contact*/
 
 #contact {
@@ -186,7 +184,6 @@ body {
   max-width: 400px;
   font-size: 16px;
 }
-
 
 .contactBox {
   background-color: #3f593c;
@@ -235,14 +232,14 @@ body {
   display: flex;
   padding: 7px;
   width: 322px;
-  margin-left: 340px;
+  margin-left: 1050px;
 }
 
 #contactButton {
   background-color: #d9edb5;
   border-radius: 15px;
   justify-self: center;
-  margin: 10px 0 0 375px;
+  margin: 10px 0 0 1075px;
   padding: 7px;
   width: 280px;
 }
@@ -286,6 +283,7 @@ body {
   cursor: pointer;
   position: relative;
 }
+
 .winkelbutton {
   background-color: #69ab4b;
   color: #ffffff;
